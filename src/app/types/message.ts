@@ -1,4 +1,6 @@
-export type Message= {
-  text:string,
-  lifetime:Date
+import * as moment from "moment";
+
+export class Message{
+  text:string=""
+  lifetime:Date=moment().toDate()
 }

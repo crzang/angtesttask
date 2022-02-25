@@ -1,10 +1,13 @@
 
 <div>
   <span>Type message here</span>
-  <input type="text"/>
-  <input type="button">
-  <div *ngFor="let message of messages">
-    <app-message [message]="message" *ngIf="getVisiblityItem(message.lifetime)"></app-message>
-  </div>
+  <input #messageInput type="text"/>
+  <span>Lifetime in seconds</span>
+  <input #lifetimeInput type="number"/>
+  <button type="button" (click)="onSendMessage(messageInput.value,lifetimeInput.value)">Send message!</button>
+
+  <p *ngFor="let message of getMessages()">
+    <app-message [message]="message" ></app-message>
+  </p>
 
 </div>
